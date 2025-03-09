@@ -1,0 +1,200 @@
+<!-- Motivational Heatmap - Samantha Song - Started 2025.03.06-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .required:after {
+        content:" *";
+        color: red;
+        }
+    /* body {
+            background-color: ivory;
+            margin: 10%;
+            text-align: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- HTML - For the information on the page -->
+    <main id="main">
+        <h1 id="title">
+            2025 New Years Resolutions
+        </h1>
+        <header>
+            <nav>
+                <a href="#about">About</a> |
+                <a href="#grammar">Grammar</a> |
+                <a href="#kanji">Kanji</a> |
+                <a href="#vocabulary">Vocabulary</a> |
+                <a href="#listening">Listening</a> |
+                <a href="#reading">Reading</a> |
+                <a href="#writing">Writing</a> |
+                <a href="#speaking">Speaking</a> |
+            </nav>
+        </header>
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                This webpage is to keep track of the user's 2025 New Years Resolutions.<br>
+                It will show heatmaps for motivation, and include links to aid in completing the user's goals.<br>
+                The user will be able to toggle each day as complete or incomplete (Boolean).<br>
+                The user will also be able to record any hours spent or notes to show up when hovering over a completed day.
+            </p>
+            <p>
+                Future Ideas:<br>
+                Include a character to "say" motivational stuff, maybe include different personality types and allow user to personalize.
+            </p>
+        </section>
+        <section id="grammar">
+            <h2>Grammar</h2>
+            <p>
+                Insert heatmap for grammar<br>
+                Insert hover support for heatmap: Day, Minutes Spent, Notes<br>
+                Insert click support for heatmap: Toggle complete or imcomplete<br>
+            </p>
+            <!-- Insert fields for Day, Minutes Spent, Notes to modify information -->
+            <form onsubmit="pop_up(event, 'Grammar')" name="Grammar">
+                Date: <input type="date" id="date" name="date" required>
+                Minutes Spent: <input type="number" name="min_spent" required><br>
+                Note: <br>
+                <textarea name="note" rows="4" columns="50"></textarea><br>
+                    <!-- <input type="text" name="note"> -->
+                <input type="submit" value="Submit">
+            </form>
+            <h3>Links</h3>
+            <p>
+                <ul>
+                    <li><a href="https://www.youtube.com">Youtube</a></li>
+                </ul>
+            </p>
+        </section>
+        <section id="kanji">
+            <h2>Kanji</h2>
+            <p>
+                Insert heatmap for kanji<br>
+                Insert hover support for heatmap: Day, Kanji Learned, Minutes Spent, Notes<br>
+                Insert click support for heatmap: Toggle complete or imcomplete<br>
+                Insert fields for Day, Kanji Learned, Minutes Spent, Notes to modify information
+                <form onsubmit="pop_up(event, 'Kanji')">
+                    Date: <input type="date" name="date" required>
+                    Kanji Learned: <input type="number" name="num" required>
+                    Minutes Spent: <input type="number" name="min_spent" required><br>
+                    Note: <br><input type="text" name="note">
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
+        </section>
+        <section id="vocabulary">
+            <h2>Vocabulary</h2>
+            <p>
+                Insert heatmap for vocabulary<br>
+                Insert hover support for heatmap: Day, Vocabulary Learned, Minutes Spent, Notes<br>
+                Insert click support for heatmap: Toggle complete or imcomplete<br>
+                Insert fields for Day, Vocabulary Learned, Minutes Spent, Notes to modify information
+                <form onsubmit="pop_up(event, 'Vocabulary')">
+                    Date: <input type="date" name="v_date" required>
+                    Vocabulary Learned: <input type="number" name="v_num" required>
+                    Minutes Spent: <input type="number" name="v_min_spent" required><br>
+                    Note: <br><input type="text" name="v_note">
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
+        </section>
+        <section id="listening">
+            <h2>Listening</h2>
+            <p>
+                Insert heatmap for listening<br>
+                Insert hover support for heatmap: Day, Minutes Spent, Notes<br>
+                Insert click support for heatmap: Toggle complete or imcomplete<br>
+                Insert fields for Day, Minutes Spent, Notes to modify information
+                <form onsubmit="pop_up(event, 'Listening')">
+                    Date: <input type="date" name="l_date" required>
+                    Minutes Spent: <input type="number" name="l_min_spent" required><br>
+                    Note: <br><input type="text" name="l_note">
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
+        </section>
+        <section id="reading">
+            <h2>Reading</h2>
+            <p>
+                Insert heatmap for reading<br>
+                Insert hover support for heatmap: Day, Pages Read, Minutes Spent, Notes<br>
+                Insert click support for heatmap: Toggle complete or imcomplete<br>
+                Insert fields for Day, Pages Read, Minutes Spent, Notes to modify information
+                <form onsubmit="pop_up(event, 'Reading')">
+                    Date: <input type="date" name="r_date" required>
+                    Pages Read: <input type="number" name="r_num" required>
+                    Minutes Spent: <input type="number" name="r_min_spent" required><br>
+                    Note: <br><input type="text" name="r_note">
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
+        </section>
+        <section id="writing">
+            <h2>Writing</h2>
+            <p>
+                Insert heatmap for writing<br>
+                Insert hover support for heatmap: Day, Minutes Spent, Notes<br>
+                Insert click support for heatmap: Toggle complete or imcomplete<br>
+                Insert fields for Day, Minutes Spent, Notes to modify information
+                <form onsubmit="pop_up(event, 'Writing')">
+                    Date: <input type="date" name="w_date" required>
+                    Minutes Spent: <input type="number" name="w_min_spent" required><br>
+                    Note: <br><input type="text" name="w_note">
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
+        </section>
+        <section id="speaking">
+            <h2>Speaking</h2>
+            <p>
+                Insert heatmap for speaking<br>
+                Insert hover support for heatmap: Day, Minutes Spent, Notes<br>
+                Insert click support for heatmap: Toggle complete or imcomplete<br>
+                Insert fields for Day, Minutes Spent, Notes to modify information
+                <form onsubmit="pop_up(event, 'Speaking')">
+                    Date: <input type="date" name="s_date" required>
+                    Minutes Spent: <input type="number" name="s_min_spent" required><br>
+                    Note: <br><input type="text" name="s_note">
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
+            <script>
+                const todays_date = new Date();
+                const date_fields = document.querySelectorAll('input[type="date"]');
+                date_fields.forEach(date_field => {date_field.valueAsDate = todays_date;});
+
+                function pop_up(event, which_hp){
+                    event.preventDefault();
+                    let date = event.target.date.value;
+                    let min_spent = event.target.min_spent.value;
+                    let note = event.target.note.value;
+                    let num = 0;
+                    try{ // For heatmaps that have number of kanji/pages/vocab
+                        let num = event.target.num.value;
+                        window.alert(which_hp + '\nDate: ' + date +
+                            '\nNum: ' + num +
+                            '\nMinutes Spent: ' + min_spent +
+                            '\nNote: ' + note);
+                    }
+                    catch(ReverenceError){
+                        window.alert(which_hp + '\nDate: ' + date +
+                            '\nMinutes Spent: ' + min_spent +
+                            '\nNote: ' + note);
+                    }
+                    finally{ 
+                        const jsObject = {which: which_hp,
+                                        date: date,
+                                        min_spent: min_spent,
+                                        add_num: num,
+                                        note: note
+                                        };
+                    }
+                };
+            </script>
+        </section>
+    </main>
+</body>
