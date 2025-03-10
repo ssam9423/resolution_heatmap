@@ -3,16 +3,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css"> -->
     <style>
-        .required:after {
-        content:" *";
-        color: red;
+        html{
+            scroll-padding-top: 55px;
         }
-    /* body {
-            background-color: ivory;
-            margin: 10%;
+        body {
+            margin: 0;
+            background-color: #EDF6F9;
+            text-decoration-color: #006D77;
+            font-family: "Copperplate", fantasy;
+
+        }
+        h1{
             text-align: center;
-        } */
+            color: #006D77;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+            background: #006D77;
+            font-size: 20;
+        }
+        section {
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-bottom: 15px;
+        }
+        header a:link, header a:visited {
+            padding: 15px;
+            color: #EDF6F9;
+            text-decoration: none;
+        }
+        header a:hover, header a:active {
+            padding: 15px;
+            background-color: #EDF6F9;
+            color: #006D77;
+        }
     </style>
 </head>
 
@@ -22,16 +54,16 @@
         <h1 id="title">
             2025 New Years Resolutions
         </h1>
-        <header>
+        <header id="navigator">
             <nav>
-                <a href="#about">About</a> |
-                <a href="#grammar">Grammar</a> |
-                <a href="#kanji">Kanji</a> |
-                <a href="#vocabulary">Vocabulary</a> |
-                <a href="#listening">Listening</a> |
-                <a href="#reading">Reading</a> |
-                <a href="#writing">Writing</a> |
-                <a href="#speaking">Speaking</a> |
+                <a href="#about">About</a>
+                <a href="#grammar">Grammar</a>
+                <a href="#kanji">Kanji</a>
+                <a href="#vocabulary">Vocabulary</a>
+                <a href="#listening">Listening</a>
+                <a href="#reading">Reading</a>
+                <a href="#writing">Writing</a>
+                <a href="#speaking">Speaking</a>
             </nav>
         </header>
         <section id="about">
@@ -41,6 +73,10 @@
                 It will show heatmaps for motivation, and include links to aid in completing the user's goals.<br>
                 The user will be able to toggle each day as complete or incomplete (Boolean).<br>
                 The user will also be able to record any hours spent or notes to show up when hovering over a completed day.
+            </p>
+            <p>
+                Need To Do:<br>
+                Pass information from form to csv<br>
             </p>
             <p>
                 Future Ideas:<br>
@@ -54,13 +90,18 @@
                 Insert hover support for heatmap: Day, Minutes Spent, Notes<br>
                 Insert click support for heatmap: Toggle complete or imcomplete<br>
             </p>
+            <!-- <div id="cal-heatmap"></div>
+            <script>
+                const cal = new CalHeatmap();
+                cal.paint({date: { start: new Date(2020, 0, 1) },});
+                render(<div id="cal-heatmap"></div>);
+            </script> -->
             <!-- Insert fields for Day, Minutes Spent, Notes to modify information -->
             <form onsubmit="pop_up(event, 'Grammar')" name="Grammar">
                 Date: <input type="date" id="date" name="date" required>
                 Minutes Spent: <input type="number" name="min_spent" required><br>
                 Note: <br>
-                <textarea name="note" rows="4" columns="50"></textarea><br>
-                    <!-- <input type="text" name="note"> -->
+                <textarea name="note" rows="4"></textarea><br>
                 <input type="submit" value="Submit">
             </form>
             <h3>Links</h3>
@@ -81,7 +122,8 @@
                     Date: <input type="date" name="date" required>
                     Kanji Learned: <input type="number" name="num" required>
                     Minutes Spent: <input type="number" name="min_spent" required><br>
-                    Note: <br><input type="text" name="note">
+                    Note: <br>
+                    <textarea name="note" rows="4"></textarea><br>
                     <input type="submit" value="Submit">
                 </form>
             </p>
@@ -97,7 +139,8 @@
                     Date: <input type="date" name="v_date" required>
                     Vocabulary Learned: <input type="number" name="v_num" required>
                     Minutes Spent: <input type="number" name="v_min_spent" required><br>
-                    Note: <br><input type="text" name="v_note">
+                    Note: <br>
+                    <textarea name="note" rows="4"></textarea><br>
                     <input type="submit" value="Submit">
                 </form>
             </p>
@@ -112,7 +155,8 @@
                 <form onsubmit="pop_up(event, 'Listening')">
                     Date: <input type="date" name="l_date" required>
                     Minutes Spent: <input type="number" name="l_min_spent" required><br>
-                    Note: <br><input type="text" name="l_note">
+                    Note: <br>
+                    <textarea name="note" rows="4"></textarea><br>
                     <input type="submit" value="Submit">
                 </form>
             </p>
@@ -128,9 +172,17 @@
                     Date: <input type="date" name="r_date" required>
                     Pages Read: <input type="number" name="r_num" required>
                     Minutes Spent: <input type="number" name="r_min_spent" required><br>
-                    Note: <br><input type="text" name="r_note">
+                    Note: <br>
+                    <textarea name="note" rows="4"></textarea><br>
                     <input type="submit" value="Submit">
                 </form>
+            </p>
+            <h3>Links</h3>
+            <p>
+                <ul>
+                    <li><a href="https://www.tenyomi.com/">Tenyomi</a></li>
+                    <li><a href="https://www.tadoku.org/japanese/en/free-books-en">Tadoku</a></li>
+                </ul>
             </p>
         </section>
         <section id="writing">
@@ -143,7 +195,8 @@
                 <form onsubmit="pop_up(event, 'Writing')">
                     Date: <input type="date" name="w_date" required>
                     Minutes Spent: <input type="number" name="w_min_spent" required><br>
-                    Note: <br><input type="text" name="w_note">
+                    Note: <br>
+                    <textarea name="note" rows="4"></textarea><br>
                     <input type="submit" value="Submit">
                 </form>
             </p>
@@ -158,7 +211,8 @@
                 <form onsubmit="pop_up(event, 'Speaking')">
                     Date: <input type="date" name="s_date" required>
                     Minutes Spent: <input type="number" name="s_min_spent" required><br>
-                    Note: <br><input type="text" name="s_note">
+                    Note: <br>
+                    <textarea name="note" rows="4"></textarea><br>
                     <input type="submit" value="Submit">
                 </form>
             </p>
